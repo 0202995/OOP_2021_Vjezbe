@@ -1,32 +1,31 @@
-﻿/* Definirati strukturu kruznica i strukturu pravokutnik koja predstavlja
-pravokutnik čije su stranice paralelne sa osima apscisa i ordinata.Napisati
-funkciju koja prima niz pravokutnika i jednu kruznicu i vraća broj pravokutnika koji sijeku kružnicu.
-Niz pravokutnika i kružnica šalju se u funkciju pomoću const referenci.
-Napomena:
-– Jednadžba kružnice sa središtem u S(xs, ys) radijusa r
-(x − xs)^2 + (y − ys)^2 = r^2
-– Pravokutnik u koordinatnom sustavu je određen sa svojom donjom lijevom i gornjom desnom točkom.
-*/
-using namespace std;
 #include <iostream>
-#define RADIJUS(x,xs,y,ys) sqrt((x − xs)^2 + (y − ys)^2)
-struct Kruznica {
-	unsigned r;
-	int xs, ys;
-};
-struct Pravokutnik {
-	int ax,ay,cx,cy;
-};
-
-int intersect(Pravokutnik*niz, Kruznica k)
+#include <math.h>
+#define DISTANCE(ax,ay,sx,sy) sqrt((ay-sy)*(ay-sy) + (ax-sx)*(ax-sx))
+using namespace std;
+struct Pravokutnik
 {
-	int i = 0;
+    float ax,ay,cx,cy;
+};
+struct Kruznica
+{
+    unsigned r;
+    float sx,sy;
+};
+int intersect(Pravokutnik*niz, Kruznica k, size_t&s)
+{
+    int counter=0;
+    for(int i=0 ; i<s; i++)
+    {
+        double distance = DISTANCE(niz[i].ax, niz[i].ay, k.sx, k.sy);
+        if(distance<k.r)
+            counter++;
+    }
+    return counter;
 }
 int main()
 {
-	Kruznica k = { 2,1,1 };
-	Pravokutnik niz[] = { {1,1,3,3}, {4,4,7,7}, {-1,1,1,3} };
-	int len_prvk = sizeof(niz) / sizeof(niz[0]);
-	cout << len_prvk;
+    Pravokutnik niz[] = {{6,3,9,5}, {2,4,4,7}, {4,2,7,4}};
+    Kruznica k = {2,3,3};
+    size_t s = sizeof(niz)/sizeof(niz[0]);
+    cout<<intersect(niz, k, s);
 }
-
