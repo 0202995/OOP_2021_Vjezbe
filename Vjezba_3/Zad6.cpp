@@ -8,7 +8,7 @@ svaki string preokrene te sortira vektor po preokrenutim stringovima.*/
 using std::string;
 using std::vector;
 using namespace std;
-void insert_strings(vector<string>&v)
+void insert_reverse_and_sort_strings(vector<string>&v)
 {
     string s;
     while(s!=".")
@@ -20,13 +20,13 @@ void insert_strings(vector<string>&v)
             break;
         reverse(s.begin(), s.begin()+s.size());
         v.push_back(s);
+        sort(v.begin(), v.end());
     }
 }
 int main()
 {
     vector<string> v;
-    insert_strings(v);
-    sort(v.begin(), v.end());
+    insert_reverse_and_sort_strings(v);
     for(int i=0; i<v.size(); ++i)
     {
         cout<<v[i]<<" ";

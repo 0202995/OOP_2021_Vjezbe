@@ -3,35 +3,23 @@ podstringa ima u stringu koristeći funkcije standardne biblioteke*/
 #include <iostream>
 #include <string>
 #include <cstring>
-using std::string;
-int count_substr(string &s, string &sub)
+using namespace std;
+int count_substr(string &str, string &substring)
 {
-    int count=0;
-    for(int i=0; i<s.size(); ++i)
+    int cnt=0;
+    size_t found = str.find(substring);
+    while(found != string::npos)
     {
-        int z=0;
-        for (int j=i; j<i+sub.size();++j)
-        {
-            if(s[j]==sub[z])
-            {
-                z++;
-                if(z==sub.size())
-                {
-                    count++;
-                }
-            }
-            else
-            {
-                break;
-            }
-        }
+        cnt++;
+        found = str.find(substring, found+1);
     }
-    return count;
+    return cnt;
 }
 using namespace std;
 int main()
 {
-    string s{"aaabaaabbbaaab"};
-    string sub{"aab"};
-    cout<<"Broj ponavljanja substringa u stringu je:"<<count_substr(s,sub)<<endl;
+    string str{"aaabaaabbbaaab"};
+    string substring{"ab"};
+    int n = count_substr(str,substring);
+    cout<<"Broj ponavljanja substringa u stringu je:"<<n<<endl;
 }

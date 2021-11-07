@@ -5,19 +5,23 @@ sumu svih elemenata iza najvećeg elementa.*/
 #include <algorithm>
 using namespace std;
 using std::vector;
-int main()
+
+void sort_zero_and_sum(vector<int>&v)
 {
-    vector<int> v{44,21,78,33,124,255,91,13,7,54};
+    sort(v.begin(), v.end());
     vector<int>::iterator it=min_element(v.begin(), v.end());
     v.insert(it, 0);
-    it=max_element(v.begin(), v.end());
     int sum=0;
-    for(it=it+1; it!=v.end(); ++it)
+    for(it=v.begin(); it!=v.end(); ++it)
     {
         sum+=*it;
     }
-    cout<<"sum="<<sum<<endl;
-
+    v.push_back(sum);
+}
+int main()
+{
+    vector<int> v{44,21,78,33,124,255,91,13,7,54};
+    sort_zero_and_sum(v);
     for(int i=0; i<v.size(); ++i)
     {
         cout<<v.at(i)<<" ";

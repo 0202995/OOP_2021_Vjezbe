@@ -12,7 +12,7 @@ int main()
 {
     vector<int> v;
     vector<int>::iterator it;
-    size_t n;
+    unsigned n;
     int low, high;
     cout<<"Unesite broj elemenata vektora:"<<endl;
     cin>>n;

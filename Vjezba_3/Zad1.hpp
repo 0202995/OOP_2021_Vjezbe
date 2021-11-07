@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 using std::vector;
 
-void insert_vector(vector<int> &v, size_t n)
+void insert_vector(vector<int> &v, unsigned n)
 {
     v.reserve(n);
     cout<<"Kapacitet:"<<v.capacity()<<endl;
