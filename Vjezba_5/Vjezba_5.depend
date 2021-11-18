@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1637007254 source:c:\users\tea_1\desktop\oop\vjezba_5\zad1.cpp
+	<iostream>
+	<random>
+	"zad1.hpp"
+
+1637007286 c:\users\tea_1\desktop\oop\vjezba_5\zad1.hpp
+
+1637007144 source:c:\users\tea_1\desktop\oop\vjezba_5\main.cpp
+	"zad1.hpp"
+	<iostream>
+
+1637250882 source:c:\users\tea_1\desktop\oop\vjezba_5\practice.cpp
+	<iostream>
+	<random>
+
+1637251421 source:c:\users\tea_1\desktop\oop\vjezba_5\zad4.cpp
+	"zad2.hpp"
+	"zad3.hpp"
+	<random>
+
+1637251422 c:\users\tea_1\desktop\oop\vjezba_5\zad2.hpp
+	<iostream>
+
+1637250231 c:\users\tea_1\desktop\oop\vjezba_5\zad3.hpp
+	<iostream>
+
+1637251421 source:c:\users\tea_1\desktop\oop\vjezba_5\main4.cpp
+	"zad4.cpp"
+
+1637251421 c:\users\tea_1\desktop\oop\vjezba_5\zad4.cpp
+	"zad2.hpp"
+	"zad3.hpp"
+	<random>
+
