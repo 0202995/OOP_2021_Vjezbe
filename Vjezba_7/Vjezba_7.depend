@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1639677785 source:c:\users\tea_1\desktop\spa\vjezba_7\main.cpp
+	"header.hpp"
+
+1639678052 c:\users\tea_1\desktop\spa\vjezba_7\header.hpp
+	<iostream>
+
+1639677629 source:c:\users\tea_1\desktop\spa\vjezba_7\funtions.cpp
+	"header.hpp"
+
